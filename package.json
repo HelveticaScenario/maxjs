@@ -1,0 +1,26 @@
+{
+  "name": "maxjs",
+  "version": "0.0.1",
+  "description": "An implementation of MaxMSP/PureData in javascript for the browser and nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thecontrarian/maxjs.git"
+  },
+  "keywords": [
+    "max",
+    "msp",
+    "pd",
+    "puredata",
+    "dataflow"
+  ],
+  "author": "Daniel Lewis <thecontrarian42@gmail.com> (http://thecontrarian.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thecontrarian/maxjs/issues"
+  },
+  "homepage": "https://github.com/Thecontrarian/maxjs#readme"
+}
