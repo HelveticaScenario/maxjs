@@ -32,34 +32,27 @@ of core objects, any third-party objects will need to be hosted on a registry.
 
 ##<a name="discuss"></a>Things requiring further thought and discussion
 * How should timing be implemented?
-	###Options
-	* ####Use `setTimeout` and `setInterval` methods
-	#####Pros
-		* core to language, supported in all runtimes (browsers and servers)
-		* single code base
-		* wont require platform specific code
-		* simpler
-		
-	#####Cons
-		* not very accurate
-		
-	* ####Use Web Audio API (see [http://www.html5rocks.com/en/tutorials/audio/scheduling/](http://www.html5rocks.com/en/tutorials/audio/scheduling/))
-	#####Pros
-		* very accurate
-		
-	#####Cons
-		* not as simple (however [libraries exist](https://github.com/sebpiq/WAAClock) to wrap this in a simple api)
-		* requires newish browsers that support the web-audio api
-		
-	* ####Use process.hrtime based approach (see [https://nodejs.org/api/process.html#process_process_hrtime](https://nodejs.org/api/process.html#process_process_hrtime))
-	#####Pros
-		* very accurate
-		
-	#####Cons
-		* not as simple (however [libraries exist](https://github.com/Krb686/nanotimer) to wrap this in a simple api)
-		* requires nodejs
+	* Use `setTimeout` and `setInterval` methods
+		* Pros
+			* core to language, supported in all runtimes (browsers and servers)
+			* single code base
+			* wont require platform specific code
+			* simpler
+		* Cons
+			* not very accurate
+	* Use Web Audio API (see [http://www.html5rocks.com/en/tutorials/audio/scheduling/](http://www.html5rocks.com/en/tutorials/audio/scheduling/))
+		* Pros
+			* very accurate
+		* Cons
+			* not as simple (however [libraries exist](https://github.com/sebpiq/WAAClock) to wrap this in a simple api)
+			* requires newish browsers that support the web-audio api
+	* Use process.hrtime based approach (see [https://nodejs.org/api/process.html#process_process_hrtime](https://nodejs.org/api/process.html#process_process_hrtime))
+		* Pros
+			* very accurate
+		* Cons
+			* not as simple (however [libraries exist](https://github.com/Krb686/nanotimer) to wrap this in a simple api)
+			* requires nodejs
 		
 * Where should timing be implemented?
-	###Options
-	* ####As a part of the Runtime
-	* ####As a seperate library that can be consumed by objects that require it
+	* As a part of the Runtime
+	* As a seperate library that can be consumed by objects that require it
