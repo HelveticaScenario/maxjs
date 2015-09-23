@@ -1,9 +1,9 @@
 #Brain Dump
 
-##<a name="architecture"/></a> Architecture Overview
+##Architecture Overview
 maxjs can be broken down into three distinct parts
 
-###<a name="runtime"></a>1. Runtime
+###1. Runtime
 The Runtime is a library that represents the maxjs execution environment. It manages all patchers and is the sole
 method of (programatic) interaction with them. The Runtime should be as thin as possible and not provide any functionality
 that wouldn't better be provided as an object. The Runtime should be embeddable in other applications and should be able
@@ -18,10 +18,10 @@ Requires further discussion.
 * interface with published methods of objects (eg: `setValue` on numbox object; `trigger` on bang object; `addListener` 
 for subscribing events such as 'onChange')
 
-###<a name="gui"></a>2. GUI
+###2. GUI
 The GUI is React.js app that wraps a Runtime instance
 
-###<a name="registry"></a>3. Registry
+###3. Registry
 The registry is a server that provides discovery and distribution of objects. While the Runtime may provide a small set
 of core objects, any third-party objects will need to be hosted on a registry.
 ####Some things you can do with it
@@ -30,7 +30,27 @@ of core objects, any third-party objects will need to be hosted on a registry.
 * upload new object definitions (eg: from the Runtime)
 
 
-##<a name="discuss"></a>Things requiring further thought and discussion
+##Terminology
+
+###Patcher
+A patcher is a maxjs program. It contains instances of objects and the connections between the object *lets. A
+patcher can be used as an object in another patcher by using the `patcher` and `bpatcher` objects.
+
+###Object
+An object is a maxjs unit of execution. All execution in maxjs happens through objects. An object is similar to the OOP concept of Objects, except that it only does one thing, like a function. Objects are instanced from Object
+Definitions, which define how they work and what they do. Objects may be instantiated with an optional list of arguments. Objects communicate with other objects by emiting and recieving messages of various types. Objects emit messages through outlets and recieve messages through inlets. Objects may have 1 or more inlets and 0 or more outlets. With the exception of the first inlet, Objects create their *lets at time of instantiation, and as such may create different numbers and types of *lets given different instantiation arguments.
+
+###*Lets
+*Lets are the pathways through which messages are passed from object to object. There are two types of *let; Inlets and Outlets. Through Connections, Inlets and Outlets are routed together.
+
+###Connections/Lines/Edges/Patch Cords
+Connections aka Lines aka Edges aka Patch Cords are the message routing mechanism used by maxjs. Each Connection
+specifies an outlet and an inlet that should be routed together. There may be a maximum of one Connection between any given inlet and outlet, however both inlets and outlets may have more than one connection at a time.
+
+###Messages
+Messages are the data passed between objects through *lets.
+
+##Things requiring further thought and discussion
 * How should timing be implemented?
 	* Use `setTimeout` and `setInterval` methods
 		* Pros
