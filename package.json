@@ -1,7 +1,7 @@
 {
   "name": "maxjs",
   "version": "0.0.1",
-  "description": "An implementation of MaxMSP/PureData in javascript for the browser and nodejs",
+  "description": "An implementation of MaxMSP/PureData in javascript for the browser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/Thecontrarian/maxjs/issues"
   },
-  "homepage": "https://github.com/Thecontrarian/maxjs#readme"
+  "homepage": "https://github.com/Thecontrarian/maxjs#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.0"
+  }
 }
