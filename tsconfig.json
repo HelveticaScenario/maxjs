@@ -1,17 +1,20 @@
 {
     "compilerOptions": {
+        "target": "ES6",
         "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": false,
-        "preserveConstEnums": true,
-        "sourceMap": false,
-        "declaration": true,
         "outDir": "./lib",
+        "declaration": true,
+        "noEmitOnError": true,
+        "noImplicitAny": true
     },
     "filesGlob": [
         "src/**/*.ts"
     ],
     "files": [
-      "src/runtime.ts"
+        "src/id.ts",
+        "src/lets.ts",
+        "src/obj.ts",
+        "src/patcher.ts",
+        "src/runtime.ts"
     ]
 }
